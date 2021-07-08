@@ -2,25 +2,14 @@
 seccion 1
 ========================================================*/
 
-header{
-    background: rgba(185, 247, 149, 1);
-    border-bottom: black 1px solid;
-}
+
 header center#logo img{
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;    
+    width: 80px;
+    height: 80px;
+    border-radius: 800%; 
+    margin-top: 20px ;   
 }
 
 /*======================================================
 seccion 2
 ========================================================*/
-#seccion2 aside#izq{
-    background: blue;
-    padding: 20px;       
-}
-#seccion2 aside#der{
-    background: red;
-    padding: 20px;    
-    height: 400px; 
-}
