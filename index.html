@@ -118,8 +118,7 @@
             Cliente,Producto, Carrito
           ========================================================*/-->
           <div class="col-md-7 col-lg-7">                  
-            <form class="row needs-validation  bg-light border border-3" style="margin-bottom: 20px; padding-top: 20px;" novalidate>
-              <!-- cliente -->                  
+            <form class="row needs-validation  bg-light border border-3" style="margin-bottom: 20px; padding-top: 20px;" novalidate>                             
               <h3 class="mb-3">Datos del cliente</h3>
               <!--botones seleccionar y restablecer-->
               <div class="row">              
@@ -127,7 +126,7 @@
                   <button type="button" class="btn btn-primary me-md-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Seleccionar cliente
                   </button>
-                  <button type="button" class="btn btn-primary">
+                  <button type="reset" class="btn btn-primary" id="reset">
                     Restablecer valores
                   </button>
                 </div>              
@@ -164,78 +163,11 @@
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Forma de pago</th>
-                                <th scope="col">Comisión</th>
-                                <th scope="col">Total</th>
+                                <th scope="col">Cliente</th>                                
+                                <th scope="col">rfc</th>  
                               </tr>
                             </thead>
-                            <tbody>
-                              <tr>
-                                <th scope="row">1</th>
-                                <td>Mafahsdlkfhaskldfhklasdfhlkjasdhfrk</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                              </tr>
+                            <tbody id="cliente-tabla">                                                          
                             </tbody>
                           </table>
                         </div>                
@@ -252,15 +184,15 @@
               <div class="row g-3">
                 <div class="col-sm-12">
                   <label for="Nombre" class="form-label">Cliente</label>
-                  <input type="text" class="form-control" id="Nombre" placeholder="" value="gfdhdfh" required readonly>
+                  <input type="text" class="form-control" id="Nombre" placeholder="" required readonly>
                   <div class="invalid-feedback">
                     Se requiere un nombre valido
                   </div>
                 </div>
                   
                 <div class="col-sm-12">
-                  <label for="apellido" class="form-label">RFC</label>
-                  <input type="text" class="form-control" id="apellido" placeholder="" value="dhgjskgsfd" required readonly>
+                  <label for="RFC" class="form-label">RFC</label>
+                  <input type="text" class="form-control" id="RFC" placeholder="" required readonly>
                   <div class="invalid-feedback">
                     se requiere un RFC valido
                   </div>
@@ -364,6 +296,7 @@
         </section>
 
     </div>
+    <script src="js/tablaCliente.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    
     <script src="js/form-validation.js"></script>
   </body>
