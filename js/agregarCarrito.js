@@ -19,25 +19,25 @@ function agregar(){
   var vender=document.getElementById("total-vender");  
   var total = document.getElementById("precio-total");      
   var pago = document.getElementById("pago");
-   
-  importe.value=articulo.value*cantidad.value;
-  pago.innerHTML = importe.value;
+  
+  importe.value=articulo.value*cantidad.value;  
   vender.innerHTML=cantidad.value;
   total.innerHTML=importe.value;
 
   var oRows = document.getElementById('misCompras').getElementsByTagName('tr');
-  var iRowCount = oRows.length;  //numero de filas  
-  alert(iRowCount);    
+  var iRowCount = oRows.length;  //numero de filas      
   var Elemento = document.createElement("tr");
-  TableRow= "<tr><td>"+iRowCount +"</td><td>"+articulo.options[articulo.selectedIndex].text+"</td><td>"+vender.innerHTML+"</td><td>"+articulo.value+"</td><td>"+total.innerHTML+"</td></tr>";
+  TableRow= "<tr><td>"+iRowCount +"</td><td>"+articulo.options[articulo.selectedIndex].text+"</td><td>"+cantidad.value+"</td><td>"+articulo.value+"</td><td>"+importe.value+"</td></tr>";
   Elemento.innerHTML = TableRow;
   document.getElementById("tabla-carrito").appendChild(Elemento);
 
-
-
+  var guardar=contar();
+  vender.innerHTML=guardar[0];
+  total.innerHTML=guardar[1];
+  pago.innerHTML=guardar[1] - descontar();
 
 }
 
 
-var carritoCompra = document.getElementById("carrito");
-carritoCompra.addEventListener('click', agregar);
+// var carritoCompra = document.getElementById("carrito");
+// carritoCompra.addEventListener('click', agregar);

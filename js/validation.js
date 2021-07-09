@@ -1,5 +1,5 @@
 (function () {    
-  var forms = document.querySelectorAll('.needs-validation')   //obtener los elemetos del formulario
+  var forms = document.querySelectorAll('.validation')   //obtener los elemetos del formulario
 
   
   Array.prototype.slice.call(forms)
@@ -8,10 +8,12 @@
         if (!form.checkValidity()) {   //validad si esta vacio entra
           event.preventDefault()    //cancela el evento
           event.stopPropagation()  //evita la propagación adicional del evento actual en las fases de captura y bubbling.
-        }else{
-                  
-            agregar();
-                    
+        }else{          
+          
+            pagar();
+          
+
+          
           
         }
 
