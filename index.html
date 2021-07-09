@@ -38,8 +38,8 @@
 
               <div class="row">
                 <div class="col-sm-12">
-                  <h5>Productos a vender <span class="badge bg-secondary">5</span></h5>            
-                  <h5>Total <span class="badge bg-secondary">120</span></h5>
+                  <h5>Productos a vender <span class="badge bg-secondary" id="total-vender">0</span></h5>            
+                  <h5>Total <span class="badge bg-secondary" id="precio-total">0</span></h5>
                 </div>                                               
               </div> 
               <hr class="my-4">      
@@ -48,7 +48,7 @@
               <div class="row">
                 <form class="needs-validation" novalidate>
                   <div class="col-sm-12">                             
-                    <h5>Por pagar <span class="badge bg-secondary">120</span></h5>                                   
+                    <h5>Por pagar <span class="badge bg-secondary" id="pago">0</span></h5>                                   
                   </div>       
                   <div class="col-sm-12" style="margin-bottom: 20px; margin-top: 20px;">                             
                     <select class="form-select" id="validationCustom04" required>
@@ -118,7 +118,7 @@
             Cliente,Producto, Carrito
           ========================================================*/-->
           <div class="col-md-7 col-lg-7">                  
-            <form class="row needs-validation  bg-light border border-3" style="margin-bottom: 20px; padding-top: 20px;" novalidate>                             
+            <form class="row needs-validation  bg-light border border-3" action="#" style="margin-bottom: 20px; padding-top: 20px;" novalidate>                             
               <h3 class="mb-3">Datos del cliente</h3>
               <!--botones seleccionar y restablecer-->
               <div class="row">              
@@ -206,10 +206,7 @@
                 <div class="col-md-12">
                   <label for="articulo" class="form-label">Articulo</label>
                   <select class="form-select" id="articulo" required>
-                    <option selected disabled value="">Selecciona</option>
-                    <option>cd de juan gabriel</option>
-                    <option>cd de juan gabriel</option>
-                    <option>cd de juan gabriel</option>
+                    <option selected disabled value="">Selecciona</option>                    
                   </select>
                   <div class="invalid-feedback">
                     todavia no seleccionas un articulo
@@ -224,16 +221,13 @@
                 </div>
                 <div class="col-sm-6" style="margin-top: 20px;">
                   <label for="Importe" class="form-label">Importe</label>
-                  <input type="number" class="form-control" id="Importe" placeholder="" value="" required>
-                  <div class="invalid-feedback">
-                    se requiere un importe valido
-                  </div>                  
+                  <input type="number" class="form-control" id="Importe" placeholder="" value="" >                                  
                 </div>                            
               </div>     
 
               <div class="row">
                 <div class="col-sm-5">
-                  <button type="submit" class="btn btn-success" style="margin-top: 20px; margin-bottom: 20px;">
+                  <button type="submit" class="btn btn-success" id="carrito" style="margin-top: 20px; margin-bottom: 20px;">
                     Agregar al carrito
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
                     <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"></path>
@@ -254,7 +248,7 @@
                 </h4>
               </div>
               <div class="col-12">
-                <table class="table">
+                <table class="table" id="misCompras">
                   <thead class="table table-striped table-dark">
                     <tr>
                       <th scope="col">#</th>
@@ -264,28 +258,7 @@
                       <th scope="col">Importe</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                      <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Larry</td>
-                      <td>the Bird</td>
-                      <td>@twitter</td>
-                      <td>@twitter</td>
-                    </tr>                  
+                  <tbody id="tabla-carrito">                                    
                   </tbody>
                 </table>
               </div>
@@ -294,10 +267,59 @@
             </div>
           </div>
         </section>
+        <!--======================================================
+            Cliente,Producto, Carrito
+         ========================================================*/-->
+        <section class="row" style="margin-top: 30px;">
+          <div class="col-md-12"> 
+            <div class="row bg-light border border-3">
+              <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-primary" style="font-size: 1.25em;">Ventas</span>              
+              </h4>                                                 
+              <hr class="my-4">   
+              <!--TABLA-->   
+              <div class="row">
+                <div class="col-sm-12">
+                  <table class="table table-striped" id="MyTable">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Forma de pago</th>
+                        <th scope="col">Comisión</th>
+                        <th scope="col">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tabla-producto">
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>                
+              </div> 
+            </div>           
+          </div>
+        </section>
 
     </div>
     <script src="js/tablaCliente.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    
     <script src="js/form-validation.js"></script>
+    <script src="js/agregarCarrito.js"></script>
   </body>
 </html>
